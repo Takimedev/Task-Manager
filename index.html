@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Task Manager</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="/images/bruster.jpg" >
+</head>
+<body>
+    <div class="container">
+            
+            <div class="card">
+                <img class="avatar" src="images/bruster.jpg">
+                <div>
+                    <h2>CHAOS TASK APP</h2>
+                    <h3>Task Manager</h3>
+                    <h3>Improve your Productivity</h3>
+                </div>
+            </div>
+            <div class="card2">
+                <h2 class="timer-title">POMODORO TIMER</h2>
+                
+                <div class="timer-content">
+                    <div class="timer-left">
+                        <div class="timer-container">
+                            <svg class="progress-ring" width="200" height="200">
+                                <circle class="progress-ring-bg" cx="100" cy="100" r="85"></circle>
+                                <circle class="progress-ring-circle" cx="100" cy="100" r="85" id="progressCircle"></circle>
+                            </svg>
+                            <div class="timer-display" id="timerDisplay">25:00</div>
+                        </div>
+                    </div>
+                    
+                    <div class="timer-right">
+                        <div class="timer-mode" id="timerMode">WORK TIME</div>
+                        
+                        <div class="timer-controls">
+                            <button class="timer-btn start-btn" id="startBtn">Start</button>
+                            <button class="timer-btn pause-btn" id="pauseBtn">Pause</button>
+                            <button class="timer-btn reset-btn" id="resetBtn">Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card3">
+                <div class="task-header">
+                    <h2>TASK LIST</h2>
+                    <button class="clear-all-btn" id="clearAllBtn">Clear All</button>
+                </div>
+                <input type="text" placeholder="Add Task and press Enter" class="inpt"  id="input">
+                <ul id="tasker"></ul>
+                
+            </div>
+            
+
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

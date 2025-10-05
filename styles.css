@@ -1,0 +1,430 @@
+body{
+    margin: 0;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+.container{
+    display: grid;
+    grid-template-columns: auto auto;  
+    grid-template-rows: auto auto;
+    gap: 30px;
+    max-width: 1400px;
+    padding: 40px;
+    align-items: start;  /* IMPORTANT */
+}
+.card {
+    grid-column: 2;  /* Add this - puts it in second column */
+    grid-row: 1; 
+    width: 540px;
+    height: 200px;
+    padding: 30px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    background: #1a1a1b;
+    color: #ffffff;
+    border-bottom: 6px solid #323232;
+    box-shadow:0 2px 4px #201f21;   
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 15px;
+   
+}
+
+
+
+
+.card:hover {
+    transform: translateY(7px) translateX(7px) scale(1.02);
+    box-shadow: 10px 10px 20px rgba(135, 135, 135, 0.6); 
+    cursor: pointer;
+    border-bottom: 6px solid #3e3e3e;
+}
+.card2:hover {
+    transform: translateY(7px) translateX(7px) scale(1.02);
+    box-shadow: 10px 10px 20px rgba(135, 135, 135, 0.6); 
+    cursor: pointer;
+    border-bottom: 6px solid #3e3e3e;
+}
+.card3:hover {
+    transform: translateY(7px) translateX(7px) scale(1.02);
+    box-shadow: 10px 10px 20px rgba(135, 135, 135, 0.6); 
+    cursor: pointer;
+    border-bottom: 6px solid #3e3e3e;
+}
+
+.avatar {
+    border-radius: 15px;
+    width: 190px;
+    box-shadow: 0px 4px 8px #000000;
+}
+
+.card3{
+    grid-column: 1;      /* Put it in first column */
+    grid-row: 1 / 3;     /* Make it span rows 1 and 2 */
+    width: 400px;
+    height: 600px; 
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    display:block;
+    text-align:start;
+    background: #1a1a1b;
+    color: #ffffff;
+    border-bottom: 6px solid #323232;
+    box-shadow:0 2px 4px #201f21;   
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 15px;
+}
+
+.inpt{
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 5px;
+    width: 360px;
+    height: 35px;
+    background:#262627;
+    border-radius: 50px;
+    border: 1px solid #3e3e3e;
+    color: #ffffff;
+    font-size: 16px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: large;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #afa8a8; 
+}
+
+
+.completed::before {
+    content: '✓';
+    color: rgb(16, 187, 16);
+    margin-right: 8px;
+}
+
+/* Task List Styles */
+#tasker {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    max-height: 450px;
+    overflow-y: auto;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 10px;
+    background: #262627;
+    border-radius: 8px;
+    border: 1px solid #3e3e3e;
+    transition: background 0.2s ease;
+    
+}
+
+.task-item:hover {
+    background: #2e2e2f;
+}
+
+.task-checkbox {
+    width: 18px;
+    height: 18px;
+    margin-right: 12px;
+    cursor: pointer;
+    accent-color: rgb(16, 187, 16);
+}
+
+.task-text {
+    flex: 1;
+    color: #ffffff;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.task-text.completed {
+    text-decoration: line-through;
+    color: #afa8a8;
+}
+
+.delete-btn {
+    background: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+    line-height: 1;
+}
+
+.delete-btn:hover {
+    background: #ff6666;
+}
+
+/* Scrollbar styling for task list */
+#tasker::-webkit-scrollbar {
+    width: 8px;
+}
+
+#tasker::-webkit-scrollbar-track {
+    background: #1a1a1b;
+}
+
+#tasker::-webkit-scrollbar-thumb {
+    background: #3e3e3e;
+    border-radius: 4px;
+}
+
+#tasker::-webkit-scrollbar-thumb:hover {
+    background: #4e4e4e;
+}
+
+/* Hide default checkbox */
+.task-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #3e3e3e;
+    border-radius: 4px;
+    background: #262627;
+    cursor: pointer;
+    position: relative;
+    margin-right: 12px;
+    transition: all 0.3s ease;
+}
+
+/* Checkbox hover effect */
+.task-checkbox:hover {
+    border-color: rgb(16, 187, 16);
+}
+
+/* Checkbox when checked */
+.task-checkbox:checked {
+    background: rgb(16, 187, 16);
+    border-color: rgb(16, 187, 16);
+}
+
+/* Checkmark symbol */
+.task-checkbox:checked::after {
+    content: '✓';
+    position: absolute;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+    
+/* Task Header - puts title and button side by side */
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-right: 0px;
+}
+
+.task-header h2 {
+    margin: 0;
+}
+
+/* Clear All Button */
+.clear-all-btn {
+    background: #ff4444;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.clear-all-btn:hover {
+    background: #ff6666;
+    transform: scale(1.05);
+}
+
+.clear-all-btn:active {
+    transform: scale(0.95);
+}
+
+
+
+/* Card2 - Pomodoro Timer */
+.card2{
+    grid-column: 2;
+    grid-row: 2;
+    width: 600px;
+    height: 310px;
+    background: #1a1a1b;
+    border-radius: 15px;
+    border-bottom: 6px solid #323232;
+    box-shadow: 0 2px 4px #201f21;   
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 25px 40px;
+    box-sizing: border-box;
+}
+
+/* Timer Title */
+.timer-title {
+    margin: 0 0 20px 0;
+    color: #ffffff;
+    font-size: 22px;
+    text-align: center;
+}
+
+/* Timer Content - Horizontal Layout */
+.timer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    height: calc(100% - 50px);
+}
+
+/* Left Side - Timer Circle */
+.timer-left {
+    flex-shrink: 0;
+}
+
+.timer-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+/* SVG Progress Circle */
+.progress-ring {
+    transform: rotate(-90deg);
+}
+
+.progress-ring-bg {
+    fill: none;
+    stroke: #262627;
+    stroke-width: 12;
+}
+
+.progress-ring-circle {
+    fill: none;
+    stroke: #5a5959ff;  /* ← This is light gray! */
+    stroke-width: 12;
+    stroke-linecap: round;
+    stroke-dasharray: 534;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 1s linear, stroke 0.3s ease;
+}
+
+
+
+/* Timer Display Numbers */
+.timer-display {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 46px;
+    
+    color: #ffffff;
+    font-family:'Arial';
+}
+
+/* Right Side - Mode + Buttons */
+.timer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 20px;
+    flex: 1;
+}
+
+/* Timer Mode Label */
+.timer-mode {
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(16, 187, 16);
+    padding: 8px 30px;
+    background: transparent;
+    border-radius: 25px;
+    border: 2px solid rgb(16, 187, 16);
+    transition: all 0.3s ease;
+    text-align: center;
+    min-width: 150px;
+}
+
+.timer-mode.break-mode {
+    color: #ff9800;
+    border-color: #ff9800;
+}
+
+/* Control Buttons Container */
+.timer-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 150px;
+}
+
+/* Timer Buttons */
+.timer-btn {
+    padding: 12px 0;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+}
+
+.start-btn {
+    background: rgb(16, 187, 16);
+    color: white;
+}
+
+.start-btn:hover {
+    background: rgb(20, 220, 20);
+    transform: scale(1.05);
+}
+
+.pause-btn {
+    background: #6b6b6b;
+    color: white;
+}
+
+.pause-btn:hover {
+    background: #7e7e7e;
+    transform: scale(1.05);
+}
+
+.reset-btn {
+    background: #ff4444;
+    color: white;
+}
+
+.reset-btn:hover {
+    background: #ff6666;
+    transform: scale(1.05);
+}
+
+.timer-btn:active {
+    transform: scale(0.95);
+}
